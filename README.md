@@ -1,68 +1,177 @@
-> Need Bootstrap 5 version? [Available here!](https://github.com/nauvalazhar/bootstrap-5-login-page/)
+In this project, let's build an **Emoji Game** by applying the concepts we have learned till now.
 
-# Bootstrap 4 Login Page Template
+### Refer to the image below:
 
-[![GitHub license](https://img.shields.io/github/license/nauvalazhar/my-login.svg)](https://github.com/nauvalazhar/my-login/blob/master/LICENSE)
-![Author](https://img.shields.io/badge/author-%40nauvalazhar-blue.svg)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/nauvalazhar/my-login/.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fnauvalazhar%2Fmy-login%2F)
+<br/>
+<div style="text-align: center;">
+    <img src="https://assets.ccbp.in/frontend/content/react-js/emoji-game-output-v2.gif" alt="emoji-game-output" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
+</div>
+<br/>
 
-My Login is a Bootstrap 4 Login Page Snippet, you can use it as you wish and it's free for personal or commercial use.
+### Design Files
 
-![Preview](https://image.ibb.co/mqGRKK/image.png)
+<details>
+<summary>Click to view</summary>
 
-# Installation
-Let's make it easy! Just download this template, use it on your project.
+- [Extra Small (Size < 576px), Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/emoji-game-sm-outputs.png)
+- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Game View](https://assets.ccbp.in/frontend/content/react-js/emoji-game-lg-output-v2.png)
+- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Won Game](https://assets.ccbp.in/frontend/content/react-js/emoji-game-won-game-lg-output.png)
+- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Lose Game](https://assets.ccbp.in/frontend/content/react-js/emoji-game-lose-game-lg-output.png)
 
-# Demo
-- [Login](https://nauvalazhar.github.io/bootstrap-4-login-page/index.html)
-- [Register](https://nauvalazhar.github.io/bootstrap-4-login-page/register.html)
-- [Forgot Password](https://nauvalazhar.github.io/bootstrap-4-login-page/forgot.html)
-- [Reset Password](https://nauvalazhar.github.io/bootstrap-4-login-page/reset.html)
+</details>
 
-# Features
-- Bootstrap 4.1.3
-- Bootstrap 4 Validation
-- Verified by W3C
-- jQuery 1.12.4
-- 4 Pages included (Login, Register, Forgot Password, Reset Password)
-- Clean design
-- Show/hide password
-- Easy to use
-- Cross-browser compatibility (Chrome, Firefox, Opera, IE11, Safari)
-- Fully responsive
-- and more ...
+### Set Up Instructions
 
-# Report Some Bugs
-Find a Bug? Please, [create an issue](https://github.com/nauvalazhar/my-login/issues) and we'll fix it together for a better template.
+<details>
+<summary>Click to view</summary>
 
-# Contribution
-Contribution are always welcome and recommended! Here is how:
+- Download dependencies by running `npm install`
+- Start up the app using `npm start`
+</details>
 
-- Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
-- Clone to your machine git clone https://github.com/YOUR_USERNAME/my-login.git
-- Make your changes
-- Create a pull request
+### Completion Instructions
 
-# Changelogs
-### Aug 29, 2017
-  **Added**
-  * Verified by W3C
-  * Bootstrap 4 Validation Form
+<details>
+<summary>Functionality to be added</summary>
+<br/>
 
-  **Updated**
-  * Bootstrap 4 Version
+The app must have the following functionalities
 
-### Aug 29, 2017
-  - **Initial release**
+- Initially, the _Score_ and _Total Score_ for the current game should be **0**
+- When an **Emoji** is clicked,
 
-# Looking For a Free Admin Template?
-Stisla is waiting for you. [Download now](https://stisla.multinity.com).
+  - If it is not the same as any of the previously clicked emojis, then the _Score_ should be incremented by one
+  - If all the emojis are clicked exactly once
 
-[![Stisla Preview](https://getstisla.com/landing/stisla-share.png)](https://getstisla.com)
+    - [Won Game](https://assets.ccbp.in/frontend/content/react-js/emoji-game-won-game-lg-output.png) view should be displayed
 
+  - If it is the same as any of the previously clicked emojis
+    - [Lose Game](https://assets.ccbp.in/frontend/content/react-js/emoji-game-lose-game-lg-output.png) view should be displayed
+  - If the score achieved in the current game is higher than the previous scores then the _Top Score_ should be updated accordingly
 
-# Buy me a Coffee
-Support me :) http://buymeacoff.ee/mhdnauvalazhar
+- When the _Play Again_ button is clicked, then we should be able to play the game again
+  - The _Score_ value should be reset but not the _Top Score_ value
+- The `EmojiGame` component receives the `emojisList` as a prop. It consists of a list of emoji objects with the following properties in each emoji object
 
-# License
-[MIT License](http://opensource.org/licenses/MIT)
+  |    Key    | Data Type |
+  | :-------: | :-------: |
+  |    id     |  Number   |
+  | emojiName |  String   |
+  | emojiUrl  |  String   |
+
+</details>
+
+<details>
+<summary>Components Structure</summary>
+
+<br/>
+<div style="text-align: center;">
+    <img src="https://assets.ccbp.in/frontend/content/react-js/emoji-game-game-view-component-breakdown-structure.png" alt="emoji game view component breakdown structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
+</div>
+<br/>
+
+<div style="text-align: center;">
+    <img src="https://assets.ccbp.in/frontend/content/react-js/emoji-game-win-lose-component-breakdown-structure.png" alt="emoji game win or lose component breakdown structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
+</div>
+<br/>
+
+</details>
+
+<details>
+<summary>Implementation Files</summary>
+<br/>
+
+Use these files to complete the implementation:
+
+- `src/components/EmojiGame/index.js`
+- `src/components/EmojiGame/index.css`
+- `src/components/NavBar/index.js`
+- `src/components/NavBar/index.css`
+- `src/components/EmojiCard/index.js`
+- `src/components/EmojiCard/index.css`
+- `src/components/WinOrLoseCard/index.js`
+- `src/components/WinOrLoseCard/index.css`
+</details>
+
+### Quick Tips
+
+<details>
+<summary>Click to view</summary>
+<br>
+
+- You can use the `cursor` CSS property to specify the mouse cursor to be displayed when pointing over an element
+
+  ```
+    cursor: pointer;
+  ```
+
+  <br/>
+   <img src="https://assets.ccbp.in/frontend/content/react-js/cursor-pointer-img.png" alt="cursor pointer" style="width:100px" />
+
+- You can use the below `outline` CSS property for buttons and input elements to remove the highlighting when the elements are clicked
+
+  ```
+    outline: none;
+  ```
+
+</details>
+
+### Important Note
+
+<details>
+<summary>Click to view</summary>
+
+<br/>
+
+**The following instructions are required for the tests to pass**
+
+- The emojis should have the alt as the value of the key `emojiName` from each emoji object
+
+</details>
+
+### Resources
+
+<details>
+<summary>Image URLs</summary>
+
+- [https://assets.ccbp.in/frontend/react-js/game-logo-img.png](https://assets.ccbp.in/frontend/react-js/game-logo-img.png) alt should be **emoji logo**
+- [https://assets.ccbp.in/frontend/react-js/won-game-img.png](https://assets.ccbp.in/frontend/react-js/won-game-img.png)
+- [https://assets.ccbp.in/frontend/react-js/lose-game-img.png](https://assets.ccbp.in/frontend/react-js/lose-game-img.png)
+
+</details>
+
+<details>
+<summary>Colors</summary>
+
+<br/>
+
+<div style="background-color: #6a59ff ; width: 150px; padding: 10px; color: white">Hex: #6a59ff</div>
+<div style="background-color: #ffffff ; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
+<div style="background-color: #3d3d3d ; width: 150px; padding: 10px; color: white">Hex: #3d3d3d</div>
+
+#### Background Colors
+
+<div style="background-color: #9796f0 ; width: 150px; padding: 10px; color: white">Hex: #9796f0</div>
+<div style="background-color: #fbc7d4 ; width: 150px; padding: 10px; color: black">Hex: #fbc7d4</div>
+<div style="background-color: #ffffff33 ; width: 150px; padding: 10px; color: black">Hex: #ffffff33</div>
+<div style="background-color: #ffce27 ; width: 150px; padding: 10px; color: black">Hex: #ffce27</div>
+
+#### Border Colors
+
+<div style="background-color: #ffffff30 ; width: 150px; padding: 10px; color: black">Hex: #ffffff30</div>
+
+</details>
+
+<details>
+<summary>Font-families</summary>
+
+- Roboto
+
+</details>
+
+> ### _Things to Keep in Mind_
+>
+> - All components you implement should go in the `src/components` directory.
+> - Don't change the component folder names as those are the files being imported into the tests.
+> - **Do not remove the pre-filled code**
+> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
